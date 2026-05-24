@@ -2,7 +2,7 @@
 
 **Account ID:** 610944808410  
 **Region:** eu-south-2  
-**Last updated:** 2026-05-23 18:52 UTC
+**Last updated:** 2026-05-24 19:32 UTC
 
 ## Resource Summary
 
@@ -13,12 +13,12 @@
 | EC2 Instances (active) | 24 |
 | EKS Clusters | 1 |
 | EKS Node Groups | 3 |
-| Lambda Functions | 4 |
+| Lambda Functions | 5 |
 | RDS Instances | 1 |
 | Load Balancers | 4 |
 | S3 Buckets | 28 |
-| KMS Keys (customer) | 2 |
-| Secrets | 13 |
+| KMS Keys (customer) | 3 |
+| Secrets | 14 |
 | Security Groups | 52 |
 
 ## Production VPC
@@ -32,6 +32,6 @@
 
 - **EKS Cluster:** itl-0003-portal-prd-eks-apps-02 — status: ACTIVE
 - **RDS:** itl-0003-portal-prd-rds-apps-02-instance-1 (aurora-postgresql 16.11, db.serverless)
-- **Lambda:** 4 functions (3 inside VPC)
+- **Lambda:** 5 functions (4 inside VPC)
 - **Load Balancers:** 4 (2 ALB, 2 NLB)
 - **S3:** 28 buckets
