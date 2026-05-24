@@ -1,6 +1,6 @@
 # Portal-Prod — Compute
 
-_Last updated: 2026-05-23 18:52 UTC_
+_Last updated: 2026-05-24 19:32 UTC_
 
 ## EKS Clusters
 
@@ -26,10 +26,18 @@ _Last updated: 2026-05-23 18:52 UTC_
 |---|---|---|---|---|---|
 | aws-controltower-NotificationForwarder | python3.13 | 128MB | 60s | **No VPC** | — |
 | fortisiem-log-extractor | python3.12 | 512MB | 600s | Yes | lambda-log-extractor-sg |
+| itl-0003-portal-prd-lambda-fee-external-custom-alert-02 | dotnet10 | 256MB | 120s | Yes | itl-0003-portal-prd-lambda-fee-external-custom-alert-02-sg |
 | itl-0003-portal-prd-lambda-fsx-log-export-02 | python3.12 | 128MB | 300s | Yes | itl-0003-portal-prd-lambda-fsx-log-export-02-sg |
 | itl-0003-portal-prd-lambda-pg-audit-02 | python3.12 | 128MB | 60s | Yes | itl-0003-portal-prd-lambda-pg-audit-02-sg |
 
 ### Lambda VPC Details
+
+**itl-0003-portal-prd-lambda-fee-external-custom-alert-02**
+- Runtime: dotnet10 | Memory: 256MB | Timeout: 120s
+- Subnets: itl-0003-portal-prd-private-2b, itl-0003-portal-prd-private-2a
+- Execution role: `itl-0003-portal-prd-lambda-fee-external-custom-alert-02-role`
+- KMS: _none_
+- Environment variable keys: ExternsAPIS__Paths__AuthenticationPath, ExternsAPIS__Paths__NotificationCallbackUrl, ENVIRONMENT, AWS__Secrets__InternalAuthentication, ExternsAPIS__Paths__NotificationPath, AWS__Secrets__ConnectionString
 
 **itl-0003-portal-prd-lambda-fsx-log-export-02**
 - Runtime: python3.12 | Memory: 128MB | Timeout: 300s
