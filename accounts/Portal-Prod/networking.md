@@ -1,6 +1,6 @@
 # Portal-Prod — Networking
 
-_Last updated: 2026-05-23 18:52 UTC_
+_Last updated: 2026-05-24 19:32 UTC_
 
 ## VPC: vpc-0a2328aacb75cfc60
 
@@ -38,8 +38,8 @@ _Last updated: 2026-05-23 18:52 UTC_
 
 | Name | ID | CIDR | AZ | Free IPs |
 |---|---|---|---|---|
-| itl-0003-portal-prd-private-2a | `subnet-042f934568c455b4c` | 10.10.3.0/24 | 2a | 130 |
-| itl-0003-portal-prd-private-2b | `subnet-0c396a6c940028849` | 10.10.4.0/24 | 2b | 172 |
+| itl-0003-portal-prd-private-2a | `subnet-042f934568c455b4c` | 10.10.3.0/24 | 2a | 129 |
+| itl-0003-portal-prd-private-2b | `subnet-0c396a6c940028849` | 10.10.4.0/24 | 2b | 171 |
 | itl-0003-portal-prd-private-2c | `subnet-00fec6232d3dc188d` | 10.10.8.0/24 | 2c | 249 |
 
 ### Isolated Subnets (no internet route — recommended for RDS, restricted workloads)
