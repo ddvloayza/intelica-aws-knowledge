@@ -1,8 +1,15 @@
 # Portal-Prod — Security
 
-_Last updated: 2026-05-23 18:52 UTC_
+_Last updated: 2026-05-24 19:32 UTC_
 
 ## KMS Keys (Customer Managed)
+
+### alias/pci_2026
+- **Key ID:** `00747795-c66b-4d97-bdc7-455be5638aa5`  
+- **Usage:** ENCRYPT_DECRYPT  
+- **Rotation:** Disabled  
+- **Multi-region:** No  
+- **Description:** 
 
 ### alias/alias/itl-0003-portal-prd-kms-general-02
 - **Key ID:** `2c0f162d-26d5-4799-8c84-033bf5204000`  
@@ -27,7 +34,7 @@ _Last updated: 2026-05-23 18:52 UTC_
 - **AWS-QuickSetup-PatchPolicy-RoleForLambda-NT-us-east-1-1yqvz** — policies: AWSLambdaBasicExecutionRole
 - **DatadogIntegration-Datado-LambdaExecutionRoleDatad-3YVYFQKD2081** — policies: AWSLambdaBasicExecutionRole
 - **DatadogIntegration-ForwarderStack-WC-ForwarderRole-JSQA8ZV8AQME** — policies: AWSLambdaVPCAccessExecutionRole, AWSLambdaBasicExecutionRole
-- **itl-0003-portal-prd-lambda-fee-external-alert-02-role** — policies: AmazonEC2ContainerRegistryReadOnly
+- **itl-0003-portal-prd-lambda-fee-external-custom-alert-02-role** — policies: —
 - **itl-0003-portal-prd-lambda-fsx-log-export-02-role** — policies: —
 - **itl-0003-portal-prd-lambda-pg-audit-02-role** — policies: —
 - **ITL-Dev-Lambda-Role** — policies: ITL-Dev-Policy
