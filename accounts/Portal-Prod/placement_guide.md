@@ -1,7 +1,7 @@
 # Portal-Prod — Placement Guide
 
 _Use this document when creating new resources in this account._  
-_Last updated: 2026-05-23 18:52 UTC_
+_Last updated: 2026-05-24 19:32 UTC_
 
 ## Creating a Lambda Function
 
@@ -13,15 +13,16 @@ _Last updated: 2026-05-23 18:52 UTC_
 
 | Name | ID | CIDR | AZ | Free IPs |
 |---|---|---|---|---|
-| itl-0003-portal-prd-private-2a | `subnet-042f934568c455b4c` | 10.10.3.0/24 | 2a | 130 |
-| itl-0003-portal-prd-private-2b | `subnet-0c396a6c940028849` | 10.10.4.0/24 | 2b | 172 |
+| itl-0003-portal-prd-private-2a | `subnet-042f934568c455b4c` | 10.10.3.0/24 | 2a | 129 |
+| itl-0003-portal-prd-private-2b | `subnet-0c396a6c940028849` | 10.10.4.0/24 | 2b | 171 |
 | itl-0003-portal-prd-private-2c | `subnet-00fec6232d3dc188d` | 10.10.8.0/24 | 2c | 249 |
 
 ### Security Groups used by existing Lambdas (reuse or create similar)
 
 - `sg-0131238705f3bdd7e` — sg-0131238705f3bdd7e
-- `sg-039aecc570853bb45` — itl-0003-portal-prd-lambda-pg-audit-02-sg
 - `sg-08bec69ca1d781aad` — itl-0003-portal-prd-lambda-fsx-log-export-02-sg
+- `sg-039aecc570853bb45` — itl-0003-portal-prd-lambda-pg-audit-02-sg
+- `sg-0097bc967b64e085e` — itl-0003-portal-prd-lambda-fee-external-custom-alert-02-sg
 
 ### IAM Execution Roles available for Lambda
 
@@ -30,14 +31,14 @@ _Last updated: 2026-05-23 18:52 UTC_
 - **AWS-QuickSetup-PatchPolicy-RoleForLambda-NT-us-east-1-1yqvz** — policies: AWSLambdaBasicExecutionRole
 - **DatadogIntegration-Datado-LambdaExecutionRoleDatad-3YVYFQKD2081** — policies: AWSLambdaBasicExecutionRole
 - **DatadogIntegration-ForwarderStack-WC-ForwarderRole-JSQA8ZV8AQME** — policies: AWSLambdaVPCAccessExecutionRole, AWSLambdaBasicExecutionRole
-- **itl-0003-portal-prd-lambda-fee-external-alert-02-role** — policies: AmazonEC2ContainerRegistryReadOnly
+- **itl-0003-portal-prd-lambda-fee-external-custom-alert-02-role**
 - **itl-0003-portal-prd-lambda-fsx-log-export-02-role**
 - **itl-0003-portal-prd-lambda-pg-audit-02-role**
 
 _If none fits, create a new role with trust policy for `lambda.amazonaws.com`_
 
 ### KMS encryption
-- Default key: **alias/alias/itl-0003-portal-prd-kms-general-02**
+- Default key: **alias/pci_2026**
 
 ### VPC Endpoints available (avoid NAT Gateway costs)
 - **datasync** — Lambda can reach this service without going through NAT
@@ -55,6 +56,7 @@ _If none fits, create a new role with trust policy for `lambda.amazonaws.com`_
 
 | Name | Runtime | Memory | Subnets |
 |---|---|---|---|
+| itl-0003-portal-prd-lambda-fee-external-custom-alert-02 | dotnet10 | 256MB | itl-0003-portal-prd-private-2b, itl-0003-portal-prd-private-2a |
 | itl-0003-portal-prd-lambda-fsx-log-export-02 | python3.12 | 128MB | itl-0003-portal-prd-restricted-2b, itl-0003-portal-prd-restricted-2a |
 | itl-0003-portal-prd-lambda-pg-audit-02 | python3.12 | 128MB | itl-0003-portal-prd-restricted-2b, itl-0003-portal-prd-restricted-2a |
 | fortisiem-log-extractor | python3.12 | 512MB | itl-0003-portal-prd-private-2a |
@@ -101,7 +103,7 @@ Use tag `elbv2.k8s.aws/cluster: itl-0003-portal-prd-eks-apps-02` to associate an
 
 ### Recommended configuration based on existing patterns
 - **Region:** eu-south-2
-- **Encryption:** SSE-KMS with key **alias/alias/itl-0003-portal-prd-kms-general-02**
+- **Encryption:** SSE-KMS with key **alias/pci_2026**
 - **Block all public access:** Yes (all 4 settings enabled)
 - **Versioning:** Enabled for critical data
 - **Logging:** Enabled pointing to a dedicated logs bucket
