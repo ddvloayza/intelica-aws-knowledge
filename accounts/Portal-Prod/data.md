@@ -1,6 +1,6 @@
 # Portal-Prod — Data Layer
 
-_Last updated: 2026-05-23 18:52 UTC_
+_Last updated: 2026-05-24 19:32 UTC_
 
 ## RDS Databases
 
@@ -61,7 +61,7 @@ _Last updated: 2026-05-23 18:52 UTC_
 
 ## Secrets Manager
 
-**Total secrets:** 13
+**Total secrets:** 14
 
 | Secret | KMS Key | Rotation | Last Changed |
 |---|---|---|---|
@@ -71,10 +71,11 @@ _Last updated: 2026-05-23 18:52 UTC_
 | itl-0003-portal-prd-secret-api-appsmith-02 | _none_ | No | 2026-03-10 |
 | itl-0003-portal-prd-secret-connection-strings-02 | _none_ | No | 2026-01-26 |
 | itl-0003-portal-prd-secret-email-settings-02 | _none_ | No | 2025-11-13 |
+| itl-0003-portal-prd-secret-internal-authentication-02 | _none_ | No | 2026-05-22 |
 | itl-0003-portal-prd-secret-jwt-settings-02 | _none_ | No | 2025-11-13 |
 | itl-0003-portal-prd-secret-rsa-settings-02 | _none_ | No | 2025-11-13 |
 | itl-0003-portal-prd-secret-samba-denver-02 | _none_ | No | 2025-11-13 |
 | itl-0003-portal-prd-secret-samba-settings-02 | _none_ | No | 2025-11-15 |
 | itl-0003-portal-prd-secret-samba-vienna-02 | _none_ | No | 2025-11-13 |
 | itl-0003-portal-prd-secret-sftp-settings-02 | _none_ | No | 2025-11-15 |
-| rds!cluster-ef7cb42a-ff9d-412f-9151-46b85d2fdc35 | _none_ | ✅ Yes | 2026-05-13 |
+| rds!cluster-ef7cb42a-ff9d-412f-9151-46b85d2fdc35 | _none_ | ✅ Yes | 2026-05-20 |
