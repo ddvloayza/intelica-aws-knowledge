@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITULO_DOCUMENTO}} · Intelica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =====================================================
+   INTELICA · BRAND TOKENS
+   ===================================================== */
+:root{
+  --intelica-blue:#21409A;
+  --intelica-blue-2:#2A4FBD;
+  --intelica-orange:#FF860D;
+  --intelica-navy:#0F1533;
+  --intelica-bg:#F0F4FF;
+  --intelica-bg-soft:#FDFDFF;
+  --intelica-gray:#474D66;
+  --intelica-gray-2:#808599;
+  --intelica-gray-3:#B8BCCC;
+  --intelica-gray-4:#D8DDEF;
+  --intelica-positive:#64E386;
+  --intelica-negative:#F04B4B;
+  --intelica-warning:#FF860D;
+  --white:#FFFFFF;
+  --font-display:"Plus Jakarta Sans","Calibri",sans-serif;
+  --font-body:"Plus Jakarta Sans","Calibri",sans-serif;
+  --font-mono:"JetBrains Mono","Consolas",monospace;
+  --shadow-sm:0 1px 2px rgba(15,21,51,0.04);
+  --shadow-md:0 4px 16px rgba(15,21,51,0.06),0 1px 3px rgba(15,21,51,0.04);
+  --shadow-lg:0 12px 40px rgba(15,21,51,0.08),0 4px 12px rgba(15,21,51,0.04);
+  --radius-sm:6px;
+  --radius-md:10px;
+  --radius-lg:16px;
+  --radius-xl:24px;
+}
+
+/* =====================================================
+   BASE
+   ===================================================== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--intelica-bg-soft);color:var(--intelica-navy);line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+
+/* =====================================================
+   TOPBAR
+   ===================================================== */
+.topbar{background:rgba(255,255,255,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(33,64,154,0.08);position:sticky;top:0;z-index:50}
+.topbar-inner{max-width:1280px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-logo{display:flex;align-items:center}
+.brand-logo svg{height:38px;width:auto}
+.topbar-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:var(--intelica-gray)}
+.topbar-tag{background:var(--intelica-bg);color:var(--intelica-blue);padding:5px 12px;border-radius:999px;font-weight:600;font-size:12px;letter-spacing:0.02em}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+.hero{max-width:1280px;margin:0 auto;padding:60px 40px 48px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--intelica-blue);margin-bottom:20px}
+.hero-eyebrow::before{content:"";width:28px;height:2px;background:var(--intelica-orange)}
+.hero h1{font-family:var(--font-display);font-size:clamp(32px,4.5vw,56px);font-weight:300;line-height:1.08;letter-spacing:-0.03em;color:var(--intelica-navy);margin-bottom:20px;max-width:860px}
+.hero h1 strong{font-weight:700;color:var(--intelica-blue)}
+.hero-sub{font-size:17px;line-height:1.65;color:var(--intelica-gray);max-width:680px;margin-bottom:40px}
+.hero-pills{display:flex;gap:10px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;font-size:12px;font-weight:600;border:1.5px solid}
+.pill.blue{background:#EBF4FF;color:#1a5276;border-color:#2980b9}
+.pill.green{background:#EAFAF1;color:#1d6a39;border-color:#27ae60}
+.pill.orange{background:#FEF9EF;color:#7e5109;border-color:#e67e22}
+.pill.red{background:#FDECEA;color:#78281f;border-color:#e74c3c}
+.pill.purple{background:#F4ECF7;color:#6c3483;border-color:#8e44ad}
+
+/* =====================================================
+   CONTENT
+   ===================================================== */
+.content{max-width:1280px;margin:0 auto;padding:56px 40px 100px}
+.section-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--intelica-blue);margin-bottom:10px}
+.section-title{font-family:var(--font-display);font-size:38px;font-weight:300;letter-spacing:-0.025em;line-height:1.1;color:var(--intelica-navy);margin-bottom:14px}
+.section-title strong{font-weight:700;color:var(--intelica-blue)}
+.section-intro{font-size:16px;color:var(--intelica-gray);max-width:760px;margin-bottom:44px;line-height:1.65}
+
+h3.block-title{font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:-0.015em;color:var(--intelica-navy);margin:40px 0 8px}
+.block-intro{font-size:14px;color:var(--intelica-gray);margin-bottom:20px;max-width:760px}
+
+/* Prose helpers */
+.content p{font-size:15px;color:var(--intelica-gray);line-height:1.7;margin-bottom:14px;max-width:820px}
+.content ul,.content ol{margin:0 0 16px 22px;color:var(--intelica-gray);font-size:15px;line-height:1.7}
+.content li{margin-bottom:6px}
+.content code{font-family:var(--font-mono);font-size:0.88em;background:var(--intelica-bg);color:var(--intelica-blue);padding:2px 7px;border-radius:var(--radius-sm)}
+.content pre{font-family:var(--font-mono);font-size:13px;background:var(--intelica-navy);color:#E8ECFB;padding:18px 22px;border-radius:var(--radius-md);overflow-x:auto;margin:14px 0;line-height:1.55}
+.content pre code{background:transparent;color:inherit;padding:0}
+.content a{color:var(--intelica-blue);text-decoration:none;border-bottom:1px solid rgba(33,64,154,0.25)}
+.content a:hover{border-bottom-color:var(--intelica-blue)}
+
+/* =====================================================
+   CALLOUT
+   ===================================================== */
+.callout{border-left:3px solid var(--intelica-orange);background:#FFF7EE;padding:16px 20px;border-radius:0 var(--radius-md) var(--radius-md) 0;margin:20px 0;font-size:14px;color:var(--intelica-navy);line-height:1.6}
+.callout strong{color:var(--intelica-orange)}
+.callout.info{border-left-color:var(--intelica-blue);background:var(--intelica-bg)}
+.callout.info strong{color:var(--intelica-blue)}
+.callout.success{border-left-color:#27ae60;background:#EAFAF1}
+.callout.success strong{color:#1d6a39}
+.callout.danger{border-left-color:var(--intelica-negative);background:#FEF0F0}
+.callout.danger strong{color:#C42626}
+
+/* =====================================================
+   BADGE
+   ===================================================== */
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.04em}
+.badge.ok{background:#D8F3DE;color:#1F7A35}
+.badge.no{background:#FFEAEA;color:#A12424}
+.badge.warn{background:#FFF1E1;color:#B86200}
+.badge.info{background:#E0EAFE;color:#1B3A8B}
+
+/* =====================================================
+   CARDS & TILES
+   ===================================================== */
+.card{background:white;border:1px solid rgba(33,64,154,0.08);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-sm);margin-bottom:18px}
+.card-grid{display:grid;gap:18px}
+.card-grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.card-grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card-grid.cols-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+
+.tile{background:white;border:1px solid rgba(33,64,154,0.08);border-radius:var(--radius-md);padding:22px;transition:all 0.2s;position:relative;overflow:hidden}
+.tile::before{content:"";position:absolute;top:0;left:0;width:4px;height:0;background:var(--intelica-blue);transition:height 0.25s}
+.tile:hover{border-color:rgba(33,64,154,0.2);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.tile:hover::before{height:100%}
+.tile.accent::before{background:var(--intelica-orange);height:100%}
+.tile.success::before{background:#27ae60;height:100%}
+.tile.danger::before{background:var(--intelica-negative);height:100%}
+.tile-kicker{font-family:var(--font-mono);font-size:10px;color:var(--intelica-blue);font-weight:600;letter-spacing:0.04em;margin-bottom:7px;text-transform:uppercase}
+.tile.accent .tile-kicker{color:var(--intelica-orange)}
+.tile.success .tile-kicker{color:#1F7A35}
+.tile.danger .tile-kicker{color:var(--intelica-negative)}
+.tile-title{font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--intelica-navy);margin-bottom:7px;line-height:1.3}
+.tile-body{font-size:13px;color:var(--intelica-gray);line-height:1.55}
+.tile-meta{margin-top:12px;padding-top:12px;border-top:1px solid rgba(33,64,154,0.07);display:flex;flex-wrap:wrap;gap:5px 12px;font-size:11px;color:var(--intelica-gray-2);font-family:var(--font-mono)}
+.tile-meta strong{color:var(--intelica-navy);font-weight:600}
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+.table-wrap{background:white;border:1px solid rgba(33,64,154,0.08);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);margin:18px 0}
+table.itl{width:100%;border-collapse:collapse;font-size:13px}
+table.itl thead{background:var(--intelica-bg)}
+table.itl th{text-align:left;padding:12px 16px;font-family:var(--font-display);font-weight:600;color:var(--intelica-navy);font-size:12px;text-transform:uppercase;letter-spacing:0.04em;border-bottom:1px solid var(--intelica-gray-4)}
+table.itl td{padding:12px 16px;color:var(--intelica-gray);border-bottom:1px solid rgba(33,64,154,0.06);vertical-align:top}
+table.itl tr:last-child td{border-bottom:none}
+table.itl tr:hover td{background:#FAFBFF}
+table.itl code{font-family:var(--font-mono);font-size:12px;background:var(--intelica-bg);color:var(--intelica-blue);padding:2px 6px;border-radius:4px}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.foot{margin-top:60px;padding:48px 40px 32px;background:var(--intelica-navy);color:#C0C7E0}
+.foot-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot p{font-size:13px;color:#A0A7CA}
+.foot-bottom{border-top:1px solid rgba(255,255,255,0.08);margin-top:24px;padding-top:20px;font-size:12px;color:#7B83A8;text-align:center}
+.foot code{font-family:var(--font-mono);color:#A0A7CA}
+</style>
+</head>
+<body>
+
+<!-- =====================================================
+     TOPBAR · Logo Intelica + tag del documento
+     ===================================================== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#">
+      <div class="brand-logo">
+        <svg width="140" height="52" viewBox="0 0 1088 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2_3676)">
+<path d="M353.51 142.85C353.51 135.96 359.28 130 366.54 130C373.8 130 379.38 135.96 379.38 142.85C379.38 149.74 373.61 155.88 366.54 155.88C359.47 155.88 353.51 149.74 353.51 142.85ZM355 170.4H377.71V266.64H355V170.4Z" fill="#21409A"/>
+<path d="M492.93 205.4V266.64H470.97V209.87C470.97 196.84 462.59 187.53 450.68 187.53C438.77 187.53 428.9 195.53 427.41 205.77V266.64H404.7V170.4H427.41V183.24C433.37 174.31 444.54 168.16 457.19 168.16C478.22 168.16 492.93 183.61 492.93 205.39V205.4Z" fill="#21409A"/>
+<path d="M573.9 261.24C568.5 265.89 560.68 268.87 553.42 268.87C537.41 268.87 526.24 257.33 526.24 241.13V189.19H512.28V170.39H526.24V143.96H548.39V170.39H570.17V189.19H548.39V238.33C548.39 244.85 552.48 249.5 557.88 249.5C561.79 249.5 565.33 248.01 567.37 245.96L573.89 261.22L573.9 261.24Z" fill="#21409A"/>
+<path d="M663.25 239.09L677.58 253.98C669.2 262.92 652.45 268.87 638.49 268.87C610.94 268.87 588.23 247.84 588.23 218.24C588.23 188.64 609.82 168.17 637.19 168.17C666.97 168.17 684.29 190.69 684.29 226.25H611.69C614.48 239.47 624.53 248.77 638.31 248.77C647.24 248.77 657.86 244.67 663.25 239.09ZM611.87 208.93H662.5C659.89 196.83 651.7 188.27 638.12 188.27C625.46 188.27 615.22 196.27 611.87 208.93Z" fill="#21409A"/>
+<path d="M705.88 136.52H728.59V266.64H705.88V136.52Z" fill="#21409A"/>
+<path d="M754.09 142.85C754.09 135.96 759.86 130 767.12 130C774.38 130 779.96 135.96 779.96 142.85C779.96 149.74 774.19 155.88 767.12 155.88C760.05 155.88 754.09 149.74 754.09 142.85ZM755.58 170.4H778.29V266.64H755.58V170.4Z" fill="#21409A"/>
+<path d="M800.25 218.43C800.25 191.07 823.89 168.17 852 168.17C866.52 168.17 879.36 174.31 888.48 183.81L873.22 197.21C868.01 191.44 860 187.53 851.81 187.53C835.99 187.53 822.77 201.68 822.77 218.43C822.77 235.18 835.99 249.52 851.81 249.52C860.19 249.52 868.38 245.61 873.78 239.47L889.04 252.69C879.73 262.56 866.89 268.89 851.62 268.89C823.88 268.89 800.24 245.81 800.24 218.44L800.25 218.43Z" fill="#21409A"/>
+<path d="M991.98 208.75V266.64H969.83V255.1C962.76 264.03 950.66 268.88 939.49 268.88C919.01 268.88 903.56 256.78 903.56 238.17C903.56 219.56 921.24 206.15 942.84 206.15C951.59 206.15 961.08 208.01 969.83 211.36V208.75C969.83 197.58 963.69 186.79 946.19 186.79C937.07 186.79 928.32 189.95 920.13 194.05L912.31 178.23C925.9 171.53 938.56 168.18 950.66 168.18C976.16 168.18 991.98 184.38 991.98 208.76V208.75ZM969.83 236.48V225.68C962.76 223.26 954.75 221.96 946.19 221.96C934.84 221.96 925.71 228.29 925.71 237.41C925.71 246.53 933.71 252.3 944.51 252.3C955.31 252.3 967.22 246.72 969.83 236.48Z" fill="#21409A"/>
+<path d="M121.43 264.24C121.43 264.24 151.17 291.38 260.78 240.5L274.87 213.57L278.76 203.72C278.76 203.72 209.47 253.88 136.35 232.18C112.22 225.02 121.43 264.24 121.43 264.24Z" fill="#21409A"/>
+<path d="M160.35 290.9C160.35 290.9 194.37 304.16 243.73 276.69L256.61 268.44L263.39 260.39C263.39 260.39 213.03 284.69 169.28 271.71C154.84 267.43 160.35 290.9 160.35 290.9Z" fill="#21409A"/>
+<path d="M97.58 210.81C97.58 210.81 171.77 253.74 275.3 172.83L263.8 143.44C263.8 143.44 201.11 198.83 123.82 174.4C97.7 166.15 97.58 210.81 97.58 210.81Z" fill="#21409A"/>
+<path d="M111.08 150.16C111.08 150.16 169.19 177.25 247.48 127.07L221.81 114.18C221.81 114.18 198.26 138.12 132.92 127.75L111.08 150.16Z" fill="#21409A"/>
+<path d="M254.49 125.91C246.13 119.03 236.59 113.53 226.22 109.76C210.21 119.55 190.48 130.04 167.72 139.09C140.74 149.83 118.02 162.58 100.7 173.78C98.29 182.21 97 191.11 97 200.32C97 203.88 97.2 207.4 97.58 210.86C115.56 197.72 144.73 179.02 182.05 164.18C211.95 152.28 236.62 137.92 254.49 125.92V125.91Z" fill="#FF860D"/>
+<path d="M205.49 104.76C201.5 104.26 197.44 104 193.32 104C158.51 104 128.01 122.47 111.09 150.14C125.24 142.01 141.78 133.67 160.34 126.29C177.13 119.61 192.27 112.15 205.49 104.76Z" fill="#FF860D"/>
+<path d="M285.59 228.02C288.22 219.25 289.64 209.95 289.64 200.32C289.64 198.05 289.56 195.79 289.4 193.56C271.45 205.69 246.44 220.36 216 232.46C180.85 246.44 152.93 263.85 134.78 276.8C142.74 282.9 151.69 287.79 161.34 291.19C177.57 281.19 197.73 270.38 221.09 261.09C246.78 250.87 268.61 238.82 285.59 228.02Z" fill="#FF860D"/>
+<path d="M286.05 174.2C282.26 160.71 275.6 148.42 266.78 138.03C248.69 150.48 222.72 166 190.78 178.71C149.81 195 118.67 215.94 101.37 229.07C105.51 242.32 112.43 254.33 121.45 264.43C139.49 251.32 168.34 232.96 205.11 218.33C240.08 204.42 267.89 187.13 286.05 174.19V174.2Z" fill="#FF860D"/>
+<path d="M229.01 272.52C210.87 279.73 194.66 287.86 180.73 295.81C184.85 296.35 189.05 296.63 193.32 296.63C228.31 296.63 258.93 277.98 275.8 250.07C262.2 257.75 246.5 265.56 229.01 272.51V272.52Z" fill="#FF860D"/>
+</g>
+<defs>
+<clipPath id="clip0_2_3676">
+<rect width="895.98" height="194.45" fill="white" transform="translate(96 103)"/>
+</clipPath>
+</defs>
+        </svg>
+      </div>
+    </a>
+    <div class="topbar-meta">
+      <span class="topbar-tag">{{TOPBAR_TAG}}</span>
+      <span>{{TOPBAR_SUB}}</span>
+    </div>
+  </div>
+</header>
+
+<!-- =====================================================
+     HERO · Título, descripción y pills
+     ===================================================== -->
+<section class="hero">
+  <div class="hero-eyebrow">{{HERO_EYEBROW}}</div>
+  <h1>{{HERO_TITULO_LIGHT}}<br><strong>{{HERO_TITULO_BOLD}}</strong></h1>
+  <p class="hero-sub">{{HERO_DESCRIPCION}}</p>
+  <div class="hero-pills">
+    <!-- Pills opcionales — clases disponibles: blue, green, orange, red, purple -->
+    <!-- <span class="pill blue">🏷️ Pill 1</span> -->
+    <!-- <span class="pill green">🏷️ Pill 2</span> -->
+  </div>
+</section>
+
+<!-- =====================================================
+     CONTENIDO · Aquí va el cuerpo del documento
+
+     Componentes disponibles (ver guía al final del archivo):
+       · .section-eyebrow / .section-title / .section-intro
+       · h3.block-title + .block-intro
+       · .callout (variantes: info, success, danger; default = warning)
+       · .badge (variantes: ok, no, warn, info)
+       · .card / .card-grid (cols-2, cols-3, cols-4)
+       · .tile (variantes: accent, success, danger)
+       · table.itl (con .table-wrap)
+       · <code> y <pre><code> para snippets
+     ===================================================== -->
+<section class="content">
+
+  <!-- ▼▼▼ REEMPLAZAR DESDE AQUÍ ▼▼▼ -->
+
+  <div class="section-eyebrow">{{SECCION_EYEBROW}}</div>
+  <h2 class="section-title">{{SECCION_TITULO_LIGHT}} <strong>{{SECCION_TITULO_BOLD}}</strong></h2>
+  <p class="section-intro">{{SECCION_INTRO}}</p>
+
+  <!-- Contenido del documento -->
+
+  <!-- ▲▲▲ REEMPLAZAR HASTA AQUÍ ▲▲▲ -->
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <p style="font-size:15px;font-weight:600;color:white;margin-bottom:4px">{{FOOTER_TITULO}}</p>
+      <p>{{FOOTER_SUBTITULO}}</p>
+    </div>
+    <div>
+      <!-- Metadatos opcionales (cuentas AWS, versiones, fechas, etc.) -->
+      <!-- <p>DEV: <code>891376942769</code></p> -->
+      <!-- <p>PRD: <code>610944808410</code></p> -->
+    </div>
+  </div>
+  <div class="foot-bottom">Documento interno Intelica · Uso exclusivo del equipo de infraestructura y producto</div>
+</footer>
+
+</body>
+</html>
+
+<!--
+═══════════════════════════════════════════════════════════════════════
+  GUÍA DE USO DE LA TEMPLATE
+═══════════════════════════════════════════════════════════════════════
+
+PLACEHOLDERS A REEMPLAZAR:
+  {{TITULO_DOCUMENTO}}     → <title> del navegador
+  {{TOPBAR_TAG}}           → Tag azul del topbar (ej: "AWS · PCI DSS 4.0.1")
+  {{TOPBAR_SUB}}           → Subtítulo gris del topbar (ej: "eu-south-2")
+  {{HERO_EYEBROW}}         → Línea pequeña sobre el H1 con guion naranja
+  {{HERO_TITULO_LIGHT}}    → Primera parte del H1 (peso light)
+  {{HERO_TITULO_BOLD}}     → Segunda parte del H1 (peso bold, azul)
+  {{HERO_DESCRIPCION}}     → Párrafo descriptivo bajo el H1
+  {{SECCION_EYEBROW}}      → Eyebrow de la primera sección de contenido
+  {{SECCION_TITULO_*}}     → Título de sección (light + bold)
+  {{SECCION_INTRO}}        → Párrafo introductorio de la sección
+  {{FOOTER_TITULO}}        → Título blanco del footer
+  {{FOOTER_SUBTITULO}}     → Subtítulo gris del footer (versión, etc.)
+
+CHEATSHEET DE COMPONENTES:
+
+  ── Callout (aviso) ──
+  <div class="callout"><strong>Atención:</strong> texto…</div>
+  Variantes: class="callout info" | "callout success" | "callout danger"
+
+  ── Badge (etiqueta inline) ──
+  <span class="badge ok">OK</span>
+  Variantes: ok | no | warn | info
+
+  ── Pill (hero) ──
+  <span class="pill blue">🔵 Texto</span>
+  Variantes: blue | green | orange | red | purple
+
+  ── Tile (tarjeta destacada) ──
+  <div class="tile accent">
+    <div class="tile-kicker">CATEGORÍA</div>
+    <div class="tile-title">Título</div>
+    <div class="tile-body">Descripción…</div>
+    <div class="tile-meta"><span><strong>Owner:</strong> Diego</span></div>
+  </div>
+  Variantes: (default) | accent | success | danger
+
+  ── Grid de tiles/cards ──
+  <div class="card-grid cols-3">
+    <div class="tile">…</div>
+    <div class="tile">…</div>
+    <div class="tile">…</div>
+  </div>
+  Variantes de columnas: cols-2 | cols-3 | cols-4
+
+  ── Tabla ──
+  <div class="table-wrap">
+    <table class="itl">
+      <thead><tr><th>Col 1</th><th>Col 2</th></tr></thead>
+      <tbody>
+        <tr><td>…</td><td><code>valor</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  ── Bloque de código ──
+  <pre><code>aws s3 ls s3://bucket</code></pre>
+
+  ── Sub-bloque dentro de una sección ──
+  <h3 class="block-title">Título del bloque</h3>
+  <p class="block-intro">Intro corta…</p>
+═══════════════════════════════════════════════════════════════════════
+-->
