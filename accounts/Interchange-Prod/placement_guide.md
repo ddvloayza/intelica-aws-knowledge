@@ -1,7 +1,7 @@
 # Interchange-Prod — Placement Guide
 
 _Use this document when creating new resources in this account._  
-_Last updated: 2026-07-12 01:20 UTC_
+_Last updated: 2026-07-12 17:54 UTC_
 
 ## Creating a Lambda Function
 
@@ -20,11 +20,11 @@ _Last updated: 2026-07-12 01:20 UTC_
 
 ### Security Groups used by existing Lambdas (reuse or create similar)
 
-- `sg-0a9badb1aa57f04b6` — itl-0004-itx-prd-lambda-pg-audit-02-sg
 - `sg-0fde3398d48e6fdb0` — itl-0004-itx-prd-lmbd-file-load-02-sg
 - `sg-0d132d30a28741e82` — itl-0004-itx-prd-lmbd-app-02-sg
-- `sg-0cf9b3d2905943753` — itl-0004-itx-prd-lmbd-sendmail-02-sg
 - `sg-05cbf811c7de9d3f3` — itl-0004-itx-prd-lmbd-sbsa-preprocess-02
+- `sg-0cf9b3d2905943753` — itl-0004-itx-prd-lmbd-sendmail-02-sg
+- `sg-0a9badb1aa57f04b6` — itl-0004-itx-prd-lambda-pg-audit-02-sg
 
 ### IAM Execution Roles available for Lambda
 
@@ -78,8 +78,8 @@ _No isolated subnets found — use private subnets and restrict via SG_
 
 ### Security Groups used by existing RDS (reuse or create similar)
 
-- `sg-0ddb2e33452d2a5ca` — itl-0004-itx-prd-rds-app-02-sg
 - `sg-06619eddecd66bc23` — sg-06619eddecd66bc23
+- `sg-0ddb2e33452d2a5ca` — itl-0004-itx-prd-rds-app-02-sg
 
 ### Existing RDS (reference)
 

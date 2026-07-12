@@ -1,7 +1,7 @@
 # Portal-Prod — Placement Guide
 
 _Use this document when creating new resources in this account._  
-_Last updated: 2026-07-12 01:20 UTC_
+_Last updated: 2026-07-12 17:54 UTC_
 
 ## Creating a Lambda Function
 
@@ -19,13 +19,13 @@ _Last updated: 2026-07-12 01:20 UTC_
 
 ### Security Groups used by existing Lambdas (reuse or create similar)
 
-- `sg-0a9a6842b93f8716e` — itl-0003-portal-prd-lambda-sync-jira-02-sg
-- `sg-08bec69ca1d781aad` — itl-0003-portal-prd-lambda-fsx-log-export-02-sg
 - `sg-0298903744ea9eb8c` — itl-0003-portal-prd-lambda-sync-buk-absence-02-sg
+- `sg-00791bd5a7801e5c4` — itl-0003-portal-prd-lambda-sync-buk-organization-02-sg
+- `sg-0a9a6842b93f8716e` — itl-0003-portal-prd-lambda-sync-jira-02-sg
 - `sg-039aecc570853bb45` — itl-0003-portal-prd-lambda-pg-audit-02-sg
 - `sg-0097bc967b64e085e` — itl-0003-portal-prd-lambda-fee-external-custom-alert-02-sg
 - `sg-0131238705f3bdd7e` — sg-0131238705f3bdd7e
-- `sg-00791bd5a7801e5c4` — itl-0003-portal-prd-lambda-sync-buk-organization-02-sg
+- `sg-08bec69ca1d781aad` — itl-0003-portal-prd-lambda-fsx-log-export-02-sg
 
 ### IAM Execution Roles available for Lambda
 
