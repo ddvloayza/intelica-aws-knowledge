@@ -1,7 +1,7 @@
 # Interchange-Prod — Placement Guide
 
 _Use this document when creating new resources in this account._  
-_Last updated: 2026-07-12 17:54 UTC_
+_Last updated: 2026-07-17 14:42 UTC_
 
 ## Creating a Lambda Function
 
@@ -20,21 +20,21 @@ _Last updated: 2026-07-12 17:54 UTC_
 
 ### Security Groups used by existing Lambdas (reuse or create similar)
 
-- `sg-0fde3398d48e6fdb0` — itl-0004-itx-prd-lmbd-file-load-02-sg
-- `sg-0d132d30a28741e82` — itl-0004-itx-prd-lmbd-app-02-sg
-- `sg-05cbf811c7de9d3f3` — itl-0004-itx-prd-lmbd-sbsa-preprocess-02
 - `sg-0cf9b3d2905943753` — itl-0004-itx-prd-lmbd-sendmail-02-sg
+- `sg-0d132d30a28741e82` — itl-0004-itx-prd-lmbd-app-02-sg
 - `sg-0a9badb1aa57f04b6` — itl-0004-itx-prd-lambda-pg-audit-02-sg
+- `sg-0fde3398d48e6fdb0` — itl-0004-itx-prd-lmbd-file-load-02-sg
+- `sg-05cbf811c7de9d3f3` — itl-0004-itx-prd-lmbd-sbsa-preprocess-02
 
 ### IAM Execution Roles available for Lambda
 
 - **app-interchange-lambda-fileload-dev-role-14gv3vwo** — policies: AWSLambdaBasicExecutionRole-12d7bf48-16b0-463f-8574-dff534a5d4ba
 - **app-interchange-role-lambda-execution-dev** — policies: AWSLambdaBasicExecutionRole
 - **app-interchange-role-lambda-execution-prd** — policies: AWSLambdaBasicExecutionRole
-- **app-interchange-lambda-sbsa-upload-prd-role** — policies: app-interchange-lambda-upload-prd-role, AWSLambdaBasicExecutionRole
 - **app-interchange-lambda-fileload-prod-role** — policies: app-interchange-lambda-fileload-prod-policy, AWSLambdaBasicExecutionRole
 - **app-interchange-lambda-send_email-dev-role-n1bqvit1** — policies: AWSLambdaBasicExecutionRole-06969d10-9a60-4f65-8a4e-246a91510b81
 - **app-interchange-lambda-fileload-dev-role-wlokah8j** — policies: AWSLambdaBasicExecutionRole-f768eb84-06ff-460c-ba91-f346fed26ddb
+- **app-interchange-lambda-sbsa-upload-prd-role** — policies: app-interchange-lambda-upload-prd-role, AWSLambdaBasicExecutionRole
 - **app-interchange-lambda-fileload-dev-role-wujayiyr** — policies: AWSLambdaBasicExecutionRole-4bfa6fc0-9368-44a6-af78-ceaf4f5087ce
 
 _If none fits, create a new role with trust policy for `lambda.amazonaws.com`_

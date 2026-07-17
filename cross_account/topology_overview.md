@@ -1,6 +1,6 @@
 # Cross-Account Topology Overview
 
-_Last updated: 2026-07-12 17:54 UTC_
+_Last updated: 2026-07-17 14:42 UTC_
 
 This document describes how Intelica AWS accounts are connected to each other.
 
@@ -37,8 +37,8 @@ _Via Transit Gateway, resources in these accounts can route traffic to each othe
 | aws-controltower-ReadOnlyExecutionRole | Analytics-Dev | Audit |
 | aws-controltower-AdministratorExecutionRole | Analytics-Prod | Audit |
 | aws-controltower-ReadOnlyExecutionRole | Analytics-Prod | Audit |
-| aws-controltower-ReadOnlyExecutionRole | Intelica-Network | Audit |
 | aws-controltower-AdministratorExecutionRole | Intelica-Network | Audit |
+| aws-controltower-ReadOnlyExecutionRole | Intelica-Network | Audit |
 | itl-0001-shared-network-all-eks-route53-assume-role | Intelica-Network | Portal-Prod |
 | aws-controltower-AdministratorExecutionRole | Interchange-Dev | Audit |
 | aws-controltower-ReadOnlyExecutionRole | Interchange-Dev | Audit |
@@ -46,7 +46,7 @@ _Via Transit Gateway, resources in these accounts can route traffic to each othe
 | aws-controltower-ReadOnlyExecutionRole | Interchange-Prod | Audit |
 | intelica-copy-from-denver-to-s3-role | Interchange-Prod | Portal-Prod |
 | itl-0004-itx-prd-quickSightCrossAccountRole | Interchange-Prod | Portal-Prod |
-| aws-controltower-AdministratorExecutionRole | Portal-Dev | Audit |
 | aws-controltower-ReadOnlyExecutionRole | Portal-Dev | Audit |
+| aws-controltower-AdministratorExecutionRole | Portal-Dev | Audit |
 | aws-controltower-ReadOnlyExecutionRole | Portal-Prod | Audit |
 | aws-controltower-AdministratorExecutionRole | Portal-Prod | Audit |

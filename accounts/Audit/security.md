@@ -1,6 +1,6 @@
 # Audit — Security
 
-_Last updated: 2026-07-12 17:54 UTC_
+_Last updated: 2026-07-17 14:42 UTC_
 
 ## KMS Keys (Customer Managed)
 
@@ -16,8 +16,8 @@ _Last updated: 2026-07-12 17:54 UTC_
 ### lambda.amazonaws.com
 
 - **aws-controltower-AuditAdministratorRole** — policies: AWSLambdaExecute
-- **aws-controltower-AuditReadOnlyRole** — policies: AWSLambdaExecute
 - **aws-controltower-ForwardSnsNotificationRole** — policies: AWSLambdaBasicExecutionRole
+- **aws-controltower-AuditReadOnlyRole** — policies: AWSLambdaExecute
 - **cur-processor-role** — policies: AWSLambdaBasicExecutionRole
 - **finops-api-role** — policies: AWSLambdaBasicExecutionRole
 - **lambda_reviewer-role-7xat3d27** — policies: AWSLambdaBasicExecutionRole-33973e85-1f2e-4558-9814-4ccd8b1c3824

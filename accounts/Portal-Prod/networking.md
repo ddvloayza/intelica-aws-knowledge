@@ -1,6 +1,6 @@
 # Portal-Prod — Networking
 
-_Last updated: 2026-07-12 17:54 UTC_
+_Last updated: 2026-07-17 14:42 UTC_
 
 ## VPC: vpc-0a2328aacb75cfc60
 
@@ -30,8 +30,8 @@ _Last updated: 2026-07-12 17:54 UTC_
 
 | Name | ID | CIDR | AZ | Free IPs |
 |---|---|---|---|---|
-| itl-0003-portal-prd-public-2a | `subnet-03d18c5b1df70087a` | 10.10.1.0/24 | 2a | 248 |
-| itl-0003-portal-prd-public-2b | `subnet-0c54894493d118e63` | 10.10.2.0/24 | 2b | 248 |
+| itl-0003-portal-prd-public-2a | `subnet-03d18c5b1df70087a` | 10.10.1.0/24 | 2a | 247 |
+| itl-0003-portal-prd-public-2b | `subnet-0c54894493d118e63` | 10.10.2.0/24 | 2b | 247 |
 | itl-0003-portal-prd-public-2c | `subnet-0268210322395563d` | 10.10.7.0/24 | 2c | 251 |
 
 ### Private Subnets (route through NAT — recommended for Lambda, EC2, EKS nodes)

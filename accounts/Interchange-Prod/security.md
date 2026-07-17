@@ -1,6 +1,6 @@
 # Interchange-Prod — Security
 
-_Last updated: 2026-07-12 17:54 UTC_
+_Last updated: 2026-07-17 14:42 UTC_
 
 ## KMS Keys (Customer Managed)
 
@@ -46,10 +46,10 @@ _Last updated: 2026-07-12 17:54 UTC_
 - **app-interchange-lambda-fileload-dev-role-14gv3vwo** — policies: AWSLambdaBasicExecutionRole-12d7bf48-16b0-463f-8574-dff534a5d4ba
 - **app-interchange-role-lambda-execution-dev** — policies: AWSLambdaBasicExecutionRole
 - **app-interchange-role-lambda-execution-prd** — policies: AWSLambdaBasicExecutionRole
-- **app-interchange-lambda-sbsa-upload-prd-role** — policies: app-interchange-lambda-upload-prd-role, AWSLambdaBasicExecutionRole
 - **app-interchange-lambda-fileload-prod-role** — policies: app-interchange-lambda-fileload-prod-policy, AWSLambdaBasicExecutionRole
 - **app-interchange-lambda-send_email-dev-role-n1bqvit1** — policies: AWSLambdaBasicExecutionRole-06969d10-9a60-4f65-8a4e-246a91510b81
 - **app-interchange-lambda-fileload-dev-role-wlokah8j** — policies: AWSLambdaBasicExecutionRole-f768eb84-06ff-460c-ba91-f346fed26ddb
+- **app-interchange-lambda-sbsa-upload-prd-role** — policies: app-interchange-lambda-upload-prd-role, AWSLambdaBasicExecutionRole
 - **app-interchange-lambda-fileload-dev-role-wujayiyr** — policies: AWSLambdaBasicExecutionRole-4bfa6fc0-9368-44a6-af78-ceaf4f5087ce
 - **app-interchange-lambda-send-email-prod-role** — policies: app-interchange-lambda-send-email-prod-policy, AWSLambdaBasicExecutionRole
 - **aws-controltower-ForwardSnsNotificationRole** — policies: AWSLambdaBasicExecutionRole
@@ -59,26 +59,26 @@ _Last updated: 2026-07-12 17:54 UTC_
 
 - **app-interchange-role-ec2-dev** — policies: CloudWatchAgentServerPolicy, AmazonSSMManagedInstanceCore
 - **app-interchange-role-ec2-prd** — policies: CloudWatchAgentServerPolicy, AmazonSSMManagedInstanceCore
-- **AWSApplicationMigrationLaunchInstanceWithDrsRole** — policies: AmazonSSMManagedInstanceCore, AWSElasticDisasterRecoveryEc2InstancePolicy
 - **AWSApplicationMigrationConversionServerRole** — policies: AWSApplicationMigrationConversionServerPolicy
+- **AWSApplicationMigrationLaunchInstanceWithDrsRole** — policies: AmazonSSMManagedInstanceCore, AWSElasticDisasterRecoveryEc2InstancePolicy
 - **AWSApplicationMigrationLaunchInstanceWithSsmRole** — policies: AmazonSSMManagedInstanceCore
 - **AWSApplicationMigrationReplicationServerRole** — policies: AWSApplicationMigrationReplicationServerPolicy
-- **EC2InstanceProfileForImageBuilder** — policies: AmazonSSMManagedInstanceCore, EC2InstanceProfileForImageBuilder, EC2InstanceProfileForImageBuilderECRContainerBuilds
 - **EC2-SSM-Windows-Role** — policies: itl-0004-itx-prd-london-02-role-secret-pol, CloudWatchAgentServerPolicy, AmazonSSMDirectoryServiceAccess...
+- **EC2InstanceProfileForImageBuilder** — policies: AmazonSSMManagedInstanceCore, EC2InstanceProfileForImageBuilder, EC2InstanceProfileForImageBuilderECRContainerBuilds
 - **itl-0004-itx-prd-ec2-app-02-role** — policies: CloudWatchAgentServerPolicy, AmazonSSMManagedInstanceCore
 - **ITX_Role_SES** — policies: AmazonSESFullAccess
   _(+ 1 more)_
 
 ### ecs-tasks.amazonaws.com
 
-- **jenkins-role-ecs-task-execution-prd** — policies: AmazonECSTaskExecutionRolePolicy
 - **jenkins-role-ecs-task-prd** — policies: —
+- **jenkins-role-ecs-task-execution-prd** — policies: AmazonECSTaskExecutionRolePolicy
 
 ### rds.amazonaws.com
 
 - **app-interchange-role-rds-dev** — policies: —
-- **app-interchange-role-export-s3** — policies: app-interchange-role-rds-export-s3
 - **app-interchange-role-rds-prd** — policies: —
+- **app-interchange-role-export-s3** — policies: app-interchange-role-rds-export-s3
 - **AWSServiceRoleForRDS** — policies: AmazonRDSServiceRolePolicy
 - **demo-rds-s3-access-role** — policies: AmazonS3FullAccess
 - **itl-0004-itx-prd-rds-app-02-s3-export-role** — policies: —
@@ -86,17 +86,53 @@ _Last updated: 2026-07-12 17:54 UTC_
 
 ## Security Groups (key ones)
 
-- **itl-0004-itx-prd-02-sg-vpc-endpoints** (`sg-01ce57c1fc8749c8b`) — 0 ingress rules, 0 egress rules
-- **itl-0004-itx-prd-ec2-app-02-sg** (`sg-0697a3b7e4356aba6`) — 0 ingress rules, 0 egress rules
-- **itl-0004-itx-prd-lambda-pg-audit-02-sg** (`sg-0a9badb1aa57f04b6`) — 0 ingress rules, 0 egress rules
-- **itl-0004-itx-prd-lmbd-app-02-sg** (`sg-0d132d30a28741e82`) — 0 ingress rules, 0 egress rules
-- **itl-0004-itx-prd-lmbd-file-load-02-sg** (`sg-0fde3398d48e6fdb0`) — 0 ingress rules, 0 egress rules
-- **itl-0004-itx-prd-lmbd-sbsa-preprocess-02** (`sg-05cbf811c7de9d3f3`) — 0 ingress rules, 0 egress rules
-- **itl-0004-itx-prd-lmbd-sendmail-02-sg** (`sg-0cf9b3d2905943753`) — 0 ingress rules, 0 egress rules
-- **itl-0004-itx-prd-nlb-sftp-02-sg** (`sg-0a417ccec8040b8f3`) — 0 ingress rules, 0 egress rules
-- **itl-0004-itx-prd-rds-app-02-sg** (`sg-0ddb2e33452d2a5ca`) — 0 ingress rules, 0 egress rules
-- **itl-0004-itx-prd-sg-quicksight-02** (`sg-00983722a8c6e69af`) — 0 ingress rules, 0 egress rules
-- **itl-0004-itx-prd-tf-sftp-02-sg** (`sg-07acdd0a77dde77d8`) — 0 ingress rules, 0 egress rules
-- **sg-06619eddecd66bc23** (`sg-06619eddecd66bc23`) — 0 ingress rules, 0 egress rules
-- **sg-097a391d184cf49cd** (`sg-097a391d184cf49cd`) — 0 ingress rules, 0 egress rules
-- **sg-0becff9d6790cf669** (`sg-0becff9d6790cf669`) — 0 ingress rules, 0 egress rules
+- **itl-0004-itx-prd-02-sg-vpc-endpoints** (`sg-01ce57c1fc8749c8b`) — 1 inbound rules, 1 outbound rules
+    - IN  TCP port 443 ← 10.13.0.0/16, sg:sg-0697a3b7e4356aba6
+    - OUT ALL all ports ← 10.13.0.0/16
+- **itl-0004-itx-prd-ec2-app-02-sg** (`sg-0697a3b7e4356aba6`) — 1 inbound rules, 2 outbound rules
+    - IN  ALL all ports ← 100.0.4.38/32, 10.0.4.0/24, 10.0.3.100/32, 10.16.0.0/16, sg:sg-0aa6d55bd394447f6
+    - OUT ALL all ports ← 0.0.0.0/0
+    - OUT TCP port 443 ← sg:sg-01ce57c1fc8749c8b
+- **itl-0004-itx-prd-lambda-pg-audit-02-sg** (`sg-0a9badb1aa57f04b6`) — 0 inbound rules, 3 outbound rules
+    - OUT UDP port 53 ← 10.13.0.0/16
+    - OUT TCP port 53 ← 10.13.0.0/16
+    - OUT TCP port 443 ← sg:sg-01ce57c1fc8749c8b, pl:pl-64a5400d
+- **itl-0004-itx-prd-lmbd-app-02-sg** (`sg-0d132d30a28741e82`) — 1 inbound rules, 1 outbound rules
+    - IN  ALL all ports ← sg:sg-01ce57c1fc8749c8b
+    - OUT ALL all ports ← 10.13.0.0/16
+- **itl-0004-itx-prd-lmbd-file-load-02-sg** (`sg-0fde3398d48e6fdb0`) — 1 inbound rules, 1 outbound rules
+    - IN  ALL all ports ← sg:sg-01ce57c1fc8749c8b
+    - OUT ALL all ports ← 10.13.0.0/16
+- **itl-0004-itx-prd-lmbd-sbsa-preprocess-02** (`sg-05cbf811c7de9d3f3`) — 0 inbound rules, 1 outbound rules
+    - OUT ALL all ports ← 0.0.0.0/0
+- **itl-0004-itx-prd-lmbd-sendmail-02-sg** (`sg-0cf9b3d2905943753`) — 1 inbound rules, 1 outbound rules
+    - IN  ALL all ports ← sg:sg-01ce57c1fc8749c8b
+    - OUT ALL all ports ← 10.13.0.0/16
+- **itl-0004-itx-prd-nlb-sftp-02-sg** (`sg-0a417ccec8040b8f3`) — 1 inbound rules, 1 outbound rules
+    - IN  TCP port 2222 ← 0.0.0.0/0
+    - OUT ALL all ports ← 0.0.0.0/0
+- **itl-0004-itx-prd-rds-app-02-sg** (`sg-0ddb2e33452d2a5ca`) — 1 inbound rules, 1 outbound rules
+    - IN  TCP port 5432 ← 10.13.3.231/32, 100.0.2.8/32, 172.8.3.51/32, 10.0.4.100/32, 10.0.3.100/32, 172.31.104.94/32, 172.31.96.117/32, 10.16.0.0/16, sg:sg-0697a3b7e4356aba6, sg:sg-0fde3398d48e6fdb0, sg:sg-097a391d184cf49cd, sg:sg-0175bf9584150c48d, sg:sg-0aa6d55bd394447f6, sg:sg-08a170933bb288237, sg:sg-00983722a8c6e69af, sg:sg-04aac9e78d6520b80
+    - OUT ALL all ports ← 10.13.0.0/16, 0.0.0.0/0
+- **itl-0004-itx-prd-sg-quicksight-02** (`sg-00983722a8c6e69af`) — 0 inbound rules, 1 outbound rules
+    - OUT ALL all ports ← 0.0.0.0/0
+- **itl-0004-itx-prd-tf-sftp-02-sg** (`sg-07acdd0a77dde77d8`) — 1 inbound rules, 1 outbound rules
+    - IN  TCP port 22 ← 0.0.0.0/0
+    - OUT ALL all ports ← 0.0.0.0/0
+- **sg-06619eddecd66bc23** (`sg-06619eddecd66bc23`) — 1 inbound rules, 1 outbound rules
+    - IN  TCP port 5432 ← 172.8.3.51/32, 10.0.3.100/32, 172.31.104.94/32, 10.16.0.0/16, sg:sg-08a170933bb288237, sg:sg-005bad6e329e4bc98, sg:sg-0808b36aeca15eba4, sg:sg-0becff9d6790cf669, sg:sg-0e8864e42cb1e54d7, sg:sg-097a391d184cf49cd, sg:sg-0aa6d55bd394447f6, sg:sg-0175bf9584150c48d
+    - OUT ALL all ports ← 0.0.0.0/0
+- **sg-097a391d184cf49cd** (`sg-097a391d184cf49cd`) — 1 inbound rules, 1 outbound rules
+    - IN  TCP port 22 ← 10.18.4.81/32, 172.8.3.51/32, 10.0.3.100/32
+    - OUT ALL all ports ← 0.0.0.0/0
+- **sg-0becff9d6790cf669** (`sg-0becff9d6790cf669`) — 4 inbound rules, 7 outbound rules
+    - IN  TCP port 1433 ← 10.16.0.0/16, 10.15.0.0/16, 10.10.4.10/32, 10.10.4.11/32, sg:sg-097a391d184cf49cd, sg:sg-01b7aec8368516654, sg:sg-0175bf9584150c48d, sg:sg-0aa6d55bd394447f6
+    - IN  ALL all ports ← sg:sg-0d760cd30300debca
+    - IN  TCP port 2222 ← 10.16.0.0/16, 10.15.0.0/16, 10.10.4.10/32, 10.10.4.11/32, sg:sg-01b7aec8368516654, sg:sg-0aa6d55bd394447f6
+    - IN  TCP port 3389 ← sg:sg-0aa6d55bd394447f6
+    - OUT TCP port 80 ← 0.0.0.0/0
+    - OUT ALL all ports ← 0.0.0.0/0
+    - OUT UDP port 53 ← 169.254.169.253/32
+    - OUT TCP port 49671 ← 10.18.3.147/32
+    - OUT TCP port 443 ← 0.0.0.0/0
+    - _(+ 2 more outbound)_

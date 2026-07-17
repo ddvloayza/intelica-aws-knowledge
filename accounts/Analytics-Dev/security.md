@@ -1,6 +1,6 @@
 # Analytics-Dev — Security
 
-_Last updated: 2026-07-12 17:54 UTC_
+_Last updated: 2026-07-17 14:42 UTC_
 
 ## KMS Keys (Customer Managed)
 
@@ -26,8 +26,8 @@ _Last updated: 2026-07-12 17:54 UTC_
 
 ### ec2.amazonaws.com
 
-- **itl-0005-ana-dev-role-ec2-ssm-01** — policies: AmazonSSMManagedInstanceCore
 - **itl-0005-ana-dev-ng-dags-02-role-20251012035013397800000005** — policies: CloudWatchAgentServerPolicy, AmazonEKS_CNI_Policy, AmazonEC2ContainerRegistryReadOnly...
+- **itl-0005-ana-dev-role-ec2-ssm-01** — policies: AmazonSSMManagedInstanceCore
 
 ### eks.amazonaws.com
 
@@ -40,7 +40,17 @@ _Last updated: 2026-07-12 17:54 UTC_
 
 ## Security Groups (key ones)
 
-- **default** (`sg-0dae416b84554ddd6`) — 0 ingress rules, 0 egress rules
-- **eks-cluster-sg-itl-0005-ana-dev-eks-af-02-755421789** (`sg-08a170933bb288237`) — 0 ingress rules, 0 egress rules
-- **itl-0005-ana-dev-evpc-02-sg** (`sg-07a758f02116e2f3e`) — 0 ingress rules, 0 egress rules
-- **sg-085b5a07768a54d37** (`sg-085b5a07768a54d37`) — 0 ingress rules, 0 egress rules
+- **default** (`sg-0dae416b84554ddd6`) — 0 inbound rules, 0 outbound rules
+- **eks-cluster-sg-itl-0005-ana-dev-eks-af-02-755421789** (`sg-08a170933bb288237`) — 2 inbound rules, 4 outbound rules
+    - IN  TCP port 8080 ← sg:sg-02006a6eae69e1737
+    - IN  ALL all ports ← sg:sg-02006a6eae69e1737, sg:sg-08a170933bb288237
+    - OUT ALL all ports ← 0.0.0.0/0, sg:sg-08a170933bb288237
+    - OUT TCP port 22 ← 0.0.0.0/0
+    - OUT UDP port 53 ← 10.16.0.0/16
+    - OUT TCP port 443 ← 10.13.0.0/16, 10.16.0.0/16, 172.5.0.0/16, 172.8.0.0/16, 172.9.0.0/16
+- **itl-0005-ana-dev-evpc-02-sg** (`sg-07a758f02116e2f3e`) — 1 inbound rules, 1 outbound rules
+    - IN  TCP port 443 ← 10.16.0.0/24, 10.16.1.0/24, 10.16.2.0/24
+    - OUT ALL all ports ← 0.0.0.0/0
+- **sg-085b5a07768a54d37** (`sg-085b5a07768a54d37`) — 1 inbound rules, 1 outbound rules
+    - IN  TCP port 5432 ← 10.16.1.0/24, 10.16.2.0/24, 10.16.0.0/24
+    - OUT ALL all ports ← 0.0.0.0/0

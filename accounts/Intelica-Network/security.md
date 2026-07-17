@@ -1,6 +1,6 @@
 # Intelica-Network — Security
 
-_Last updated: 2026-07-12 17:54 UTC_
+_Last updated: 2026-07-17 14:42 UTC_
 
 ## KMS Keys (Customer Managed)
 
@@ -34,8 +34,28 @@ _Last updated: 2026-07-12 17:54 UTC_
 
 ## Security Groups (key ones)
 
-- **eks-cluster-sg-itl-0002-shared-network-all-eks-pritunl-02-1559606019** (`sg-0d8e8df1695843092`) — 0 ingress rules, 0 egress rules
-- **itl-0002-shared-network-all-ec2-directory-all-ec2-02-sg** (`sg-03bed10a7bf7da98d`) — 0 ingress rules, 0 egress rules
-- **itl-0002-shared-network-all-ec2-pritunl-02-sg** (`sg-0aa6d55bd394447f6`) — 0 ingress rules, 0 egress rules
-- **itl-0002-shared-network-all-eks-pritunl-02-sg** (`sg-04aca11661012920a`) — 0 ingress rules, 0 egress rules
-- **itl-0002-shared-network-all-vpc-endpoints-sg** (`sg-0a459eecd4fa98749`) — 0 ingress rules, 0 egress rules
+- **eks-cluster-sg-itl-0002-shared-network-all-eks-pritunl-02-1559606019** (`sg-0d8e8df1695843092`) — 1 inbound rules, 1 outbound rules
+    - IN  ALL all ports ← sg:sg-0d8e8df1695843092
+    - OUT ALL all ports ← 0.0.0.0/0, sg:sg-0d8e8df1695843092
+- **itl-0002-shared-network-all-ec2-directory-all-ec2-02-sg** (`sg-03bed10a7bf7da98d`) — 22 inbound rules, 1 outbound rules
+    - IN  UDP port 464 ← 0.0.0.0/0
+    - IN  TCP port 464 ← 0.0.0.0/0
+    - IN  TCP ports 49152-65535 ← 0.0.0.0/0
+    - IN  UDP port 389 ← 0.0.0.0/0
+    - IN  UDP port 53 ← 0.0.0.0/0
+    - _(+ 17 more inbound)_
+    - OUT ALL all ports ← 0.0.0.0/0
+- **itl-0002-shared-network-all-ec2-pritunl-02-sg** (`sg-0aa6d55bd394447f6`) — 11 inbound rules, 1 outbound rules
+    - IN  TCP port 6443 ← sg:sg-04aca11661012920a
+    - IN  TCP port 9443 ← sg:sg-04aca11661012920a
+    - IN  TCP ports 1025-65535 ← sg:sg-0aa6d55bd394447f6
+    - IN  TCP port 8443 ← sg:sg-04aca11661012920a
+    - IN  TCP ports 443-30632 ← sg:sg-043f24a24d1750bf7
+    - _(+ 6 more inbound)_
+    - OUT ALL all ports ← 0.0.0.0/0
+- **itl-0002-shared-network-all-eks-pritunl-02-sg** (`sg-04aca11661012920a`) — 1 inbound rules, 0 outbound rules
+    - IN  TCP port 443 ← sg:sg-0aa6d55bd394447f6
+- **itl-0002-shared-network-all-vpc-endpoints-sg** (`sg-0a459eecd4fa98749`) — 2 inbound rules, 1 outbound rules
+    - IN  TCP port 80 ← 10.18.0.0/16
+    - IN  TCP port 443 ← 10.18.0.0/16
+    - OUT ALL all ports ← 0.0.0.0/0

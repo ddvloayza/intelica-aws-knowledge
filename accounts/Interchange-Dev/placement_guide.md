@@ -1,7 +1,7 @@
 # Interchange-Dev — Placement Guide
 
 _Use this document when creating new resources in this account._  
-_Last updated: 2026-07-12 17:54 UTC_
+_Last updated: 2026-07-17 14:42 UTC_
 
 ## Creating a Lambda Function
 
@@ -18,13 +18,13 @@ _Last updated: 2026-07-12 17:54 UTC_
 
 ### Security Groups used by existing Lambdas (reuse or create similar)
 
-- `sg-0e1edda6ab1eed290` — itl-0004-itx-dev-lambda-pg-audit-02-sg
-- `sg-0671b8f0fb5aa27ca` — sg-0671b8f0fb5aa27ca
-- `sg-0ea832a8a272949c3` — sg-0ea832a8a272949c3
+- `sg-0f93fba3d7978e8d6` — itl-0004-itx-dev-lmbd-app-02-sg
 - `sg-08e80112c0389743c` — itl-0004-itx-dev-lmbd-sendmail-02-sg
+- `sg-0e1edda6ab1eed290` — itl-0004-itx-dev-lambda-pg-audit-02-sg
+- `sg-0ea832a8a272949c3` — sg-0ea832a8a272949c3
+- `sg-0671b8f0fb5aa27ca` — sg-0671b8f0fb5aa27ca
 - `sg-0d9bb259e3a608ad0` — sg-0d9bb259e3a608ad0
 - `sg-0b8b779c168840f49` — itl-0004-itx-dev-lmbd-sbsa-preprocess-02
-- `sg-0f93fba3d7978e8d6` — itl-0004-itx-dev-lmbd-app-02-sg
 - `sg-07565e1ecf3294bf9` — sg-07565e1ecf3294bf9
 - `sg-0ad22b09c390c7209` — itl-0004-itx-dev-lmbd-file-load-02-sg
 
@@ -33,11 +33,11 @@ _Last updated: 2026-07-12 17:54 UTC_
 - **AWS-QuickSetup-SSM-LifecycleManagement-LA-us-east-1** — policies: AWSQuickSetupSSMLifecycleManagementExecutionPolicy
 - **aws-controltower-ForwardSnsNotificationRole** — policies: AWSLambdaBasicExecutionRole
 - **itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates-role**
-- **itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-role**
 - **itl-0004-itx-dev-intchg-02-lmbd-mc-role**
+- **itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-role**
 - **itl-0004-itx-dev-intchg-02-lmbd-vi-role**
+- **itl-0004-itx-dev-lmbd-app-02-role**
 - **itl-0004-itx-dev-lambda-pg-audit-02-role**
-- **itl-0004-itx-dev-lmbd-sbsa-preprocess-02-role**
 
 _If none fits, create a new role with trust policy for `lambda.amazonaws.com`_
 

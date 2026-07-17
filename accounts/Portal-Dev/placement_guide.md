@@ -1,7 +1,7 @@
 # Portal-Dev — Placement Guide
 
 _Use this document when creating new resources in this account._  
-_Last updated: 2026-07-12 17:54 UTC_
+_Last updated: 2026-07-17 14:42 UTC_
 
 ## Creating a Lambda Function
 
@@ -18,19 +18,19 @@ _Last updated: 2026-07-12 17:54 UTC_
 
 ### Security Groups used by existing Lambdas (reuse or create similar)
 
+- `sg-06717f2261d9bef36` — itl-0003-portal-dev-lambda-sync-buk-absence-03-sg
 - `sg-0a4a3d94379c8d963` — itl-0003-portal-dev-lambda-sync-buk-organization-03-sg
-- `sg-0454300e4d0c1f411` — itl-0003-portal-dev-lambda-fee-external-custom-alert-03-sg
 - `sg-01f1fa4ca795113d8` — itl-0003-portal-dev-lambda-sync-jira-03-sg
 - `sg-054b6a28f76db503c` — itl-0003-portal-dev-lambda-pg-audit-03-sg
-- `sg-06717f2261d9bef36` — itl-0003-portal-dev-lambda-sync-buk-absence-03-sg
+- `sg-0454300e4d0c1f411` — itl-0003-portal-dev-lambda-fee-external-custom-alert-03-sg
 
 ### IAM Execution Roles available for Lambda
 
 - **aws-controltower-ForwardSnsNotificationRole** — policies: AWSLambdaBasicExecutionRole
 - **django-app-role-ximfljqh** — policies: AWSLambdaBasicExecutionRole-2d785db2-d053-40d6-a23b-a30dda6831c4
 - **f_cole-role-eysgoxjk** — policies: AWSLambdaBasicExecutionRole-3e1ad495-c34e-411b-949f-bebdb41e45ae
-- **itl-0003-portal-dev-lambda-fee-external-custom-alert-03-role**
 - **itl-0003-portal-dev-lambda-pg-audit-03-role**
+- **itl-0003-portal-dev-lambda-fee-external-custom-alert-03-role**
 - **itl-0003-portal-dev-lambda-pgaudit-01-role** — policies: AWSQuickSightIAMPolicy, AmazonSageMakerQuickSightVPCPolicy
 - **itl-0003-portal-dev-lambda-sync-buk-absence-03-role**
 - **itl-0003-portal-dev-lambda-sync-buk-organization-03-role**
